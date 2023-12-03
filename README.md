@@ -11,7 +11,7 @@ This project is a simple in-memory database implemented in C, featuring nested d
 - [Compilation](#compilation)
 - [Usage](#usage)
 - [Cross-Platform Compatibility](#cross-platform-compatibility)
-- [File Input](#file-input)
+
 
 
 ## Introduction
