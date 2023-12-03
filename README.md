@@ -41,17 +41,9 @@ gcc your_source_code.c cJSON.c -o your_program_name -lm
 * Run the compiled executable in your terminal or command prompt.
 * The program will guide you through various options for interacting with the in-memory database.
 * Perform operations such as adding collections, inserting data, querying data, updating data, filtering data, saving the database to a file, and exiting gracefully.
-
-
-## Cross-Platform Compatibility
-
-The program is designed to be cross-platform. It utilizes platform-specific code for handling screen clearing and sleep functions. This ensures a consistent user experience across different operating systems.
-
-##**File input**
-
-A sample database has been attached in the repository.
+* A sample database has been attached in the repository.
 Note : Use only a JSON Databse file.
-The hierarchy of the Database should be followed as:
+*The hierarchy of the Database should be followed as:
 1)A Database is created.
 2)Corresponding to it, collections can be made.
 3)This collections are at present in form of Key-Value Pairs and can contain a value in the from of these datatypes:
@@ -61,5 +53,13 @@ The hierarchy of the Database should be followed as:
  d)Dictionary
 4)A nested dictionary and its efficient reading is an important feature.
 5)This dictionary can contain Key-Value Pairs and corresponding to that you can create again a dictionary or else simply values with other three data types can be assigned to the Keys.
+
+
+
+
+## Cross-Platform Compatibility
+
+The program is designed to be cross-platform. It utilizes platform-specific code for handling screen clearing and sleep functions. This ensures a consistent user experience across different operating systems.
+
 
 
