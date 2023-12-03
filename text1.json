@@ -1,0 +1,33 @@
+{
+    "collection": {
+        "B23ME1022": {
+            "name": "Aaditya Jain",
+            "roll no": "B23ME1022",
+            "number": "35"
+        },
+        "B23CS1078": {
+            "name": "Vishal Kishore",
+            "roll no": "B23CS1078",
+            "number": "45"
+        },
+        "B23BB1002": {
+            "name": "Adarsh Metri",
+            "roll no": "B23BB1002",
+            "number": "25"
+        }
+    },
+    "Collection1": {
+        "B23ME1023": {
+            "name": "Somewhat",
+            "roll no": "B23ME1023"
+        },
+        "B23CS1009": {
+            "name": "John Doe",
+            "roll no": "B23CS1009"
+        },
+        "B23BB1072": {
+            "name": "Nothing",
+            "roll no": "B23BB1022"
+        }
+    }
+}
