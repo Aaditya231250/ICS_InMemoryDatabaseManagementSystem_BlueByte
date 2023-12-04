@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include <errno.h> 
-#include<termios.h>
 #include "cJSON.h"
 
 //Defining a sleep function to pause execution of the program for certain seconds
@@ -112,7 +110,7 @@ void addToCollection(InMemoryDatabase* db, const char* collectionName, const cha
                             fprintf(stderr, "Invalid string value\n");
                         }
                         
-                        perror("Message from perror"); 
+                       
                         sleepFor(2 );
                     } else if (type == DICTIONARY_TYPE) {
                         // Free existing dictionary and copy the new one
@@ -666,7 +664,7 @@ int main(){
         else if( input == 5 ){
             char file_name[50];
             printf("\n\n");
-            printf("Enter the name of the JSON File to be loaded: ");
+            printf("Enter address of JSON File to be loaded: ");
             scanf("%s", file_name);
             printf("\n\n");
 
@@ -715,7 +713,7 @@ int main(){
             for (int i =0; i < myDatabase.num_collections; i++){
             printf("||||||| %s |||||||\n",myDatabase.collections[i].name);
             getAllEntriesInCollection(&myDatabase,strdup(myDatabase.collections[i].name));
-            printf("\n--------------------------------------------\n");
+            printf("\n--------------------------------------------\n\n");
             }
             sleepFor(20);
         }
