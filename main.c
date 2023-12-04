@@ -294,6 +294,47 @@ void getAllEntriesInCollection(const InMemoryDatabase* db, const char* collectio
     fprintf(stderr, "Collection %s not found\n", collectionName);
 }
 
+// Function to compare key-value pairs based on a specified key
+int compareKeyValuePair(const KeyValuePair* a, const KeyValuePair* b, const char* key) {
+    const DataValue valueA = a->value;
+    const DataValue valueB = b->value;
+
+    // Check if either 'a' or 'b' matches the user entered key
+    if (((valueA.string_val && strcmp(a->key, key) == 0) ||
+         (valueB.string_val && strcmp(b->key, key) == 0)) &&
+        valueA.string_val && valueB.string_val) {
+        // If either 'a' or 'b' matches the specified key and both have string values,
+        // compare the string values
+        return strcmp(valueA.string_val, valueB.string_val);
+    } else if (strcmp(((const KeyValuePair*)a)->key, key) == 0) {
+        // If 'a' matches the specified key, compare the values
+        switch (a->type) {
+            case INT_TYPE:
+                return valueA.int_val - valueB.int_val;
+            case DOUBLE_TYPE:
+                return (valueA.double_val > valueB.double_val) - (valueA.double_val < valueB.double_val);
+            default:
+                
+                break;
+        }
+    } else if (strcmp(((const KeyValuePair*)b)->key, key) == 0) {
+        // If 'b' matches the specified key, compare the values
+        switch (b->type) {
+            case INT_TYPE:
+                return valueA.int_val - valueB.int_val;
+            case DOUBLE_TYPE:
+                return (valueA.double_val > valueB.double_val) - (valueA.double_val < valueB.double_val);
+            default:
+                
+                break;
+        }
+    }
+
+    // If neither 'a' nor 'b' matches the specified key or they have non-string values,
+    // compare based on the specified key
+    return strcmp(((const KeyValuePair*)a)->key, ((const KeyValuePair*)b)->key);
+}
+
 
 // Function to free the memory used by a nested dictionary
 void freeDictionary(Dictionary* dictionary) {
@@ -464,6 +505,9 @@ void displayMenu(int i){
     }
     else if (i == 2){
         printf("%s","Select datatype of entry:- \n1. INTEGER\n2. DOUBLE\n3. STRING\n4. DICTIONARY\n5. Back to Home\n6. Exit\n\n");
+    }
+    else if (i == 3){
+        printf("%s","Select datatype of entry:- \n1. INTEGER\n2. DOUBLE\n3. STRING\n5. Back to Home\n6. Exit\n\n");
     }
 } 
 
