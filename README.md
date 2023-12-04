@@ -1,5 +1,5 @@
 
-# BLUEDB 🐱‍🏍 
+# BLUEDB 🐱
 ## In-Memory Database Management System
 
 This project is a simple in-memory database implemented in C, featuring nested dictionaries and cJSON for JSON parsing. The program allows you to perform various database operations, such as adding collections, inserting data, querying data, updating data, sorting specific data, saving the database to a file, and gracefully exiting.
