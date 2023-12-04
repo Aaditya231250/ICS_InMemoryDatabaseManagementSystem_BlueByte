@@ -1,0 +1,72 @@
+int compareKeyValuePair(const KeyValuePair* a, const KeyValuePair* b, const char* key) {
+    const DataValue valueA = a->value;
+    const DataValue valueB = b->value;
+
+    // Check if either 'a' or 'b' matches the user entered key
+    if (((valueA.string_val && strcmp(a->key, key) == 0) ||
+         (valueB.string_val && strcmp(b->key, key) == 0)) &&
+        valueA.string_val && valueB.string_val) {
+        // If either 'a' or 'b' matches the specified key and both have string values,
+        // compare the string values
+        return strcmp(valueA.string_val, valueB.string_val);
+    } else if (strcmp(((const KeyValuePair*)a)->key, key) == 0) {
+        // If 'a' matches the specified key, compare the values
+        switch (a->type) {
+            case INT_TYPE:
+                return valueA.int_val - valueB.int_val;
+            case DOUBLE_TYPE:
+                return (valueA.double_val > valueB.double_val) - (valueA.double_val < valueB.double_val);
+            default:
+                
+                break;
+        }
+    } else if (strcmp(((const KeyValuePair*)b)->key, key) == 0) {
+        // If 'b' matches the specified key, compare the values
+        switch (b->type) {
+            case INT_TYPE:
+                return valueA.int_val - valueB.int_val;
+            case DOUBLE_TYPE:
+                return (valueA.double_val > valueB.double_val) - (valueA.double_val < valueB.double_val);
+            default:
+                
+                break;
+        }
+    }
+
+    // If neither 'a' nor 'b' matches the specified key or they have non-string values,
+    // compare based on the specified key
+    return strcmp(((const KeyValuePair*)a)->key, ((const KeyValuePair*)b)->key);
+}
+
+void getAllEntriesInDictionarySortedByKey(const char* collectionName, const char* dictName, const Dictionary* dictionary, const char* specifiedKey) {
+    KeyValuePair* sortedEntries = malloc(dictionary->size * sizeof(KeyValuePair));
+    memcpy(sortedEntries, dictionary->data, dictionary->size * sizeof(KeyValuePair));
+
+    // Sort the entries based on the specified key
+    qsort(sortedEntries, dictionary->size, sizeof(KeyValuePair),
+          (int (*)(const KeyValuePair*, const KeyValuePair*))compareKeyValuePair);
+
+    for (size_t i = 0; i < dictionary->size; ++i) {
+        DataType type = sortedEntries[i].type;
+
+        switch (type) {
+            case INT_TYPE:
+                printf("(%s)-> (%s) -> (%s) : %d \n", collectionName, dictName, sortedEntries[i].key, sortedEntries[i].value.int_val);
+                break;
+            case DOUBLE_TYPE:
+                printf("(%s)-> (%s) -> (%s) : %lf \n", collectionName, dictName, sortedEntries[i].key, sortedEntries[i].value.double_val);
+                break;
+            case STRING_TYPE:
+                printf("(%s)-> (%s) -> (%s) : %s \n", collectionName, dictName, sortedEntries[i].key, sortedEntries[i].value.string_val);
+                break;
+            case DICTIONARY_TYPE:
+                getAllEntriesInDictionarySortedByKey(collectionName, dictName, sortedEntries[i].value.dictionary_val, specifiedKey);
+                break;
+            default:
+                printf("Unknown Type\n");
+                break;
+        }
+    }
+
+    free(sortedEntries);
+}
