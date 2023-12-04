@@ -1,5 +1,6 @@
 
-# **BLUEDB** :fox_face:
+# **BLUEDB** :smiley_cat:
+
 ## In-Memory Database Management System
 
 This project is a simple in-memory database implemented in C, featuring nested dictionaries and cJSON for JSON parsing. The program allows you to perform various database operations, such as adding collections, inserting data, querying data, updating data, sorting specific data, saving the database to a file, and gracefully exiting.
@@ -16,7 +17,7 @@ This project is a simple in-memory database implemented in C, featuring nested d
 
 ## Introduction
 
-BLUEDB :fox_face: is designed to provide a simple, lightweight, and flexible in-memory data storage solution. It leverages the cJSON library for efficient JSON parsing and handling.
+BLUEDB :smiley_cat: is designed to provide a simple, lightweight, and flexible in-memory data storage solution. It leverages the cJSON library for efficient JSON parsing and handling.
 
 ## Dependencies
 
