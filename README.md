@@ -1,5 +1,5 @@
 
-# BLUEDB 🐱
+# **BLUEDB** :fox_face:
 ## In-Memory Database Management System
 
 This project is a simple in-memory database implemented in C, featuring nested dictionaries and cJSON for JSON parsing. The program allows you to perform various database operations, such as adding collections, inserting data, querying data, updating data, sorting specific data, saving the database to a file, and gracefully exiting.
@@ -16,7 +16,7 @@ This project is a simple in-memory database implemented in C, featuring nested d
 
 ## Introduction
 
-BLUEDB 🐱‍🏍 is designed to provide a simple, lightweight, and flexible in-memory data storage solution. It leverages the cJSON library for efficient JSON parsing and handling.
+BLUEDB :fox_face: is designed to provide a simple, lightweight, and flexible in-memory data storage solution. It leverages the cJSON library for efficient JSON parsing and handling.
 
 ## Dependencies
 
@@ -24,7 +24,7 @@ The primary external dependency for this project is the cJSON library. You can f
 
 A copy of that cJSON library has been included in the form of "cJSON1.h" and "cJSON.h" in the repository.
 Put them in the same folder as the runnable file.
-NOTE: USE THIS (.H) FILES TO RUN THE CODE ELSE YOU MIGHT RUN INTO AN ERROR....
+**NOTE: USE THIS (.H) FILES TO RUN THE CODE ELSE YOU MIGHT RUN INTO AN ERROR....**
 
 
 ## Compilation
@@ -32,7 +32,7 @@ NOTE: USE THIS (.H) FILES TO RUN THE CODE ELSE YOU MIGHT RUN INTO AN ERROR....
 To compile the program, you can use a C compiler such as `gcc`. Here's an example command:
 
 ```bash
-gcc your_source_code.c cJSON.c -o your_program_name -lm
+if ($?) { gcc main.c -o main } ; if ($?) { .\main }
 ```
 
 
@@ -42,17 +42,16 @@ gcc your_source_code.c cJSON.c -o your_program_name -lm
 * The program will guide you through various options for interacting with the in-memory database.
 * Perform operations such as adding collections, inserting data, querying data, updating data, filtering data, saving the database to a file, and exiting gracefully.
 * A sample database has been attached in the repository.
-Note : Use only a JSON Databse file.
-*The hierarchy of the Database should be followed as:
-1)A Database is created.
-2)Corresponding to it, collections can be made.
-3)This collections are at present in form of Key-Value Pairs and can contain a value in the from of these datatypes:
- a)integer
- b)double
- c)string
- d)Dictionary
-4)A nested dictionary and its efficient reading is an important feature.
-5)This dictionary can contain Key-Value Pairs and corresponding to that you can create again a dictionary or else simply values with other three data types can be assigned to the Keys.
+<br/>_**Note : Use only a JSON Databse file.**_
+*<br/>The hierarchy of the Database should be followed as:
+
+ 1) Corresponding to it, collections can be made. These collections are at present in the form of Key-Value Pairs and can contain a value in the from of these datatypes:
+    1) Integer
+    2) Double
+    3) String
+    4) Dictionary
+ 2) A nested dictionary and its efficient reading is an important feature.
+ 3) This dictionary can contain Key-Value Pairs, and corresponding to that, you can create a dictionary again or else simply values with other three data types can be assigned to the Keys.
 
 
 
