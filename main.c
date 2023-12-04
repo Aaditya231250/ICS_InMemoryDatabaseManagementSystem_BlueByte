@@ -430,6 +430,7 @@ DataValue KeyValue_Identify(cJSON *root,  InMemoryDatabase *db){
         return value1;
     }
 
+//Function to identify collections
 void Collection_Identify(cJSON *root,  InMemoryDatabase *db){
     cJSON *element = NULL;
     cJSON_ArrayForEach(element, root) {
