@@ -475,7 +475,7 @@ void pressEnterToContinue() {
     printf("Press Enter to continue...");
     fflush(stdout);
 
-     int c;
+     char c;
     do {
         c = getchar();
     } while (c != '\n' && c != EOF);
